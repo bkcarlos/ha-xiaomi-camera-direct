@@ -1,0 +1,68 @@
+{
+  "title": "Xiaomi Camera Direct",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Xiaomi Camera"
+      },
+      "authorize": {
+        "title": "Sign in to Xiaomi",
+        "description": "[Open Xiaomi sign-in]({authorize_url}). After authorizing, copy the full redirect URL from the browser, even if the page cannot load. Paste it below.",
+        "data": {
+          "redirect_url": "Full redirect URL"
+        }
+      },
+      "cameras": {
+        "title": "Choose cameras",
+        "description": "HA reads the original video directly. No RTSP server or separate camera container is needed.",
+        "data": {
+          "cameras": "Cameras",
+          "quality": "Camera quality"
+        }
+      }
+    },
+    "error": {
+      "invalid_redirect": "The URL must contain code and state.",
+      "cannot_connect": "Could not contact Xiaomi. Try again.",
+      "choose_camera": "Select at least one available camera."
+    },
+    "abort": {
+      "already_configured": "This integration is already configured.",
+      "runtime_unavailable": "The private camera runtime is missing or could not start. Install the runtime and retry.",
+      "no_cameras": "No supported cameras were found.",
+      "reauth_successful": "Account reauthenticated."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Camera settings",
+        "data": {
+          "cameras": "Cameras",
+          "quality": "Camera quality"
+        }
+      }
+    },
+    "error": {
+      "choose_camera": "Select at least one available camera."
+    },
+    "abort": {
+      "runtime_unavailable": "Could not start the camera runtime."
+    }
+  },
+  "selector": {
+    "quality": {
+      "options": {
+        "low": "Lower bandwidth",
+        "high": "High quality"
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "lens": {
+        "name": "Lens"
+      }
+    }
+  }
+}

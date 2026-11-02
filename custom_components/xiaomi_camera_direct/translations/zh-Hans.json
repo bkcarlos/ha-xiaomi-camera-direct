@@ -1,0 +1,68 @@
+{
+  "title": "小米摄像头直连",
+  "config": {
+    "step": {
+      "user": {
+        "title": "小米摄像头"
+      },
+      "authorize": {
+        "title": "登录小米账号",
+        "description": "[打开小米登录页面]({authorize_url})。授权完成后，即使页面无法打开，也请复制浏览器地址栏的完整跳转地址并粘贴到下方。",
+        "data": {
+          "redirect_url": "完整跳转地址"
+        }
+      },
+      "cameras": {
+        "title": "选择摄像头",
+        "description": "HA 直接读取摄像头原始视频，无需单独部署 RTSP 服务或摄像头容器。",
+        "data": {
+          "cameras": "摄像头",
+          "quality": "摄像头画质"
+        }
+      }
+    },
+    "error": {
+      "invalid_redirect": "地址必须包含 code 和 state。",
+      "cannot_connect": "暂时无法连接小米，请重试。",
+      "choose_camera": "请至少选择一个可用的摄像头。"
+    },
+    "abort": {
+      "already_configured": "已经配置此集成。",
+      "runtime_unavailable": "摄像头运行库缺失或启动失败，请先安装运行库后重试。",
+      "no_cameras": "没有找到支持的摄像头。",
+      "reauth_successful": "账号已重新授权。"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "摄像头设置",
+        "data": {
+          "cameras": "摄像头",
+          "quality": "摄像头画质"
+        }
+      }
+    },
+    "error": {
+      "choose_camera": "请至少选择一个可用的摄像头。"
+    },
+    "abort": {
+      "runtime_unavailable": "摄像头运行库启动失败。"
+    }
+  },
+  "selector": {
+    "quality": {
+      "options": {
+        "low": "低带宽",
+        "high": "高清"
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "lens": {
+        "name": "镜头"
+      }
+    }
+  }
+}
